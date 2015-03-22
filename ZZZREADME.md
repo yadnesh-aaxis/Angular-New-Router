@@ -31,5 +31,5 @@ I have choosen to place also the external libraries into this repository. This g
 
 
 #More Information
-You can read a post explaining more details [here](http://annotatedjs.com/ngNewRouter)
+You can read a post explaining more details [here](http://annotatedjs.com/)
 
