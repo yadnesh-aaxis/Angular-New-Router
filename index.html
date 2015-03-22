@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Annotated JS</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+
+  <!-- CSS (load bootstrap) -->
+  <link rel="stylesheet" href="libs/font-awesome-4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Angular -->
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular/router.es5.js"></script>
+  <script src="libs/ui-bootstrap/angular-ui-bootstrap.js"></script>
+  
+  <!-- App -->
+  <!-- order is irrelevant after app.js -->
+  <script src="app.js"></script>
+  <script src="MainController.js"></script>
+  <script src="common/NavController.js"></script>
+  <script src="common/FooterController.js"></script>
+  <!-- home -->
+  <script src="components/home/home.js"></script>
+  <script src="components/home/HomeController.js"></script>
+  <!-- notes -->
+  <script src="components/notes/notes.js"></script>
+  <script src="components/notes/NotesController.js"></script>
+  <script src="components/notes/NotesService.js"></script>
+  <!-- about -->
+  <script src="components/about/about.js"></script>
+  
+</head>
+
+<body ng-controller="MainController as mainCtrl">
+
+  <div id="main-wrapper">
+
+    <ng-include src="'common/nav.html'"></ng-include>
+
+    <div ng-viewport class="container-fluid slide"></div>
+
+    <ng-include src="'common/footer.html'"></ng-include>
+
+  </div>
+
+</body>
+
+</html>

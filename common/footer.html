@@ -1,0 +1,65 @@
+
+<div id="site-footer"	
+             ng-controller="FooterController as footerCtrl">
+
+	<div class="footer-belt">
+
+		<div class="footer-box">
+			<a class="footer-box-heading"
+					ng-link="home">{{ footerCtrl.siteName }}</a>
+			<br />
+			<a class="footer-box-link-text"
+					ng-link="home">version {{ footerCtrl.siteVersion }}</a>
+			<br />
+			<a class="footer-box-link-text" ng-link="about">About</a>
+		</div>
+
+		<div class="footer-box">
+			<span class="footer-box-heading">Support</span>
+			<br />
+			<a class="footer-box-link-text" ng-link="faq">FAQ</a>
+			<br />
+			<a class="footer-box-link-text" ng-link="privacy">Privacy</a>
+			<br />
+			<a class="footer-box-link-text" ng-link="terms">Terms of Use</a>
+		</div>
+
+		<div class="footer-box">
+			<span class="footer-box-heading">Contact</span>
+			<br />
+			<a href="mailto:renepost@annotatedjs.com" class="footer-box-link-text">
+                <span class="fa fa-envelope-o fa-fw"></span>&nbsp; Email</a>
+            <br />
+            <a href="https://twitter.com/@annotatedjs" class="footer-box-link-text">
+                <span class="fa fa-twitter fa-fw"></span>&nbsp; Twitter
+            </a>
+            <br />
+            <a href="https://github.com/annotatedjs" class="footer-box-link-text">
+                <span class="fa fa-git fa-fw"></span>&nbsp; Github
+            </a>
+            <br />
+            <a href="http://plnkr.co/users/AnnotatedJS" class="footer-box-link-text">
+            <span class="fa fa-arrow-down fa-fw">
+			</span>&nbsp; Plunker
+            </a>
+            <br />
+            <a href="http://youtube.com" class="footer-box-link-text">
+            <span class="fa fa-youtube-play fa-fw">
+			</span>&nbsp; YouTube
+            </a>
+            <br />
+            <a href="http://google.com" class="footer-box-link-text">
+            <span class="fa fa-google-plus fa-fw">
+			</span>&nbsp; Google+
+            </a>
+		</div>
+
+	</div>
+
+	<div id="footer-copyright">
+
+		(c) 2015 René Post &nbsp; All rights reserved
+
+	</div>
+
+</div>

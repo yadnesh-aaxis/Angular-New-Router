@@ -1,0 +1,121 @@
+<section class="container">
+
+    <div class="row">
+
+		<h1>Notes</h1>
+       
+        <h3>List Notes</h3>
+
+        <form class="form-inline">
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-default disabled fa fa-search fa-fw"></button>
+                    <input type="text" class="form-control" placeholder="Search"
+                        ng-model="searchText"/>
+                </div>
+            <button class="btn btn-danger" ng-click="searchText = ''">Clear</button>
+
+            </div>
+
+        </form>
+
+        <table class="table table-striped table-bordered">
+
+            <tr ng-if="notes.notes.length == 0">
+                <td class="bg-warning">
+                    <span class="fa fa-warning fa-fw"></span>
+                    There are currently no Notes to show.
+                </td>
+            </tr>
+
+            <tr ng-repeat="note in notes.notes | filter:searchText">
+
+                <td ng-hide="editState">
+                    <div>
+                    <h4>
+                    <span class="pull-left">
+                    {{ note.title }}
+                    </span>
+
+                    <span class="btn-group pull-right">
+                        <button class="btn btn-primary" title="Edit this note"
+                                ng-click="editState = true;
+                                            oldNote.title= note.title;
+                                            oldNote.content= note.content" >
+                            <span class="fa fa-pencil fa-fw"></span>
+                        </button>
+                        <button class="btn btn-danger" title="Delete this note"
+                                ng-click="notes.deleteNote($index)" >
+                            <span class="fa fa-trash-o fa-fw"></span>
+                        </button>
+                    </span>
+                    </h4>
+                    </div>
+                    <br />
+                    <div>
+                    {{ note.content }}
+                    </div>
+                </td>
+                <td class="jumbotron" 
+                            ng-show="editState">
+
+                     <form name="modifyNoteForm" role="form"
+                            novalidate>
+                    
+                       <fieldset class="form-group">
+                            <label>Title:</label>
+                            <input type="text" class="form-control" placeholder="Enter title here" autofocus
+                                    ng-model="note.title"
+                                    ng-required="true" />
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Content:</label>
+                            <textarea type="text" class="form-control" placeholder="Enter content here"
+                                    ng-model="note.content" ></textarea> 
+                        </fieldset>
+
+                    </form>
+
+                    <input class="btn" value= "Cancel" title="Cancel this edit action"
+                                ng-click="editState = false;
+                                            note.title= oldNote.title;
+                                            note.content= oldNote.content" />
+
+                    <input class="btn btn-primary" value= "Save" title="Save all changes"
+                                ng-click="editState = false" />
+                    </button>
+                </td>
+
+            </tr>
+
+        </table>
+
+	    <hr>
+
+	    <h3>Add Note</h3>
+
+	    <form name="addNoteForm" role="form"
+	            novalidate      
+	            ng-submit="notes.addNote()">
+	    
+	       <fieldset class="form-group">
+	            <label>Title:</label>
+	            <input type="text" class="form-control" placeholder="Enter title here" autofocus
+	                    ng-model="notes.newNote.title"
+	                    ng-required="true" />
+	        </fieldset>
+
+	        <fieldset class="form-group">
+	            <label>Content:</label>
+	            <textarea type="text" class="form-control" placeholder="Enter content here"
+	                    ng-model="notes.newNote.content" ></textarea> 
+	        </fieldset>
+
+	        <input class="btn btn-primary" type="submit" value="Add Note" />
+
+	    </form>
+
+    </div>
+
+</section>

@@ -1,0 +1,43 @@
+
+
+
+<nav class="navbar navbar-inverse" role="navigation"
+      ng-controller="NavController as navCtrl" >
+
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="container-fluid">
+
+    <div class="navbar-header">
+      <button class="navbar-toggle"
+          ng-click="navCtrl.isCollapsed = !navCtrl.isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ng-link="home">
+        {{ navCtrl.siteName }}
+        <br />
+        <small>version {{ navCtrl.siteVersion }}</small>
+      </a>
+    </div>
+
+    <!-- The content that will be toggled -->
+    <div class="collapse navbar-collapse" collapse="navCtrl.isCollapsed">
+      <ul class="nav navbar-nav">
+        <li ng-class="{ active: header.isActive('/home')}">
+          <a ng-link="home">Home</a>
+        </li>
+        <li ng-class="{ active: header.isActive('/notes')}">
+          <a ng-link="notes">Notes</a>
+        </li>
+        <li ng-class="{ active: header.isActive('/about')}">
+          <a ng-link="about">About</a>
+        </li>
+      </ul>
+  </div>
+
+</div>
+
+</nav>
+
