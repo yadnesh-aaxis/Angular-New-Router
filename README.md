@@ -33,4 +33,5 @@ I have choosen to place also the external libraries into this repository. This g
 
 #More Information
 You can read a post explaining more details [here](http://www.annotatedjs.com/notes-app-version-1-0/)
+
 You can play with a live demo [here](http://www.annotatedjs.com/demo-apps/ng-new-router/#/home)
